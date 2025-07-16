@@ -9,6 +9,8 @@ type BaseURLs = {
 type BaseURLRecords = Record<AppEnvironment, BaseURLs>
 
 // Internal functions and properties
+const appEnv = (process.env.NEXT_PUBLIC_APP_ENV || 'prod') as AppEnvironment
+
 const baseURLRecords: BaseURLRecords = {
   prod: {
     webBaseURL: process.env.NEXT_PUBLIC_BASE_URL ?? '',
@@ -53,8 +55,6 @@ function webURL(env: AppEnvironment): string {
   }
   return value
 }
-
-const appEnv = (process.env.NEXT_PUBLIC_APP_ENV || 'prod') as AppEnvironment
 
 // Exports
 export const sentryDSN =
