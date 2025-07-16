@@ -17,7 +17,7 @@ const postUpdate = async (
     'https://backend-dot-omnivore-production.wl.r.appspot.com/svc/pubsub/content/search?token=aYYLeK0kYlwnQg0wBMHO6EoAjf0LkoQ4Dyx0NGtpdjbh7F52EzHda8'
 
   // const localUrl =
-  //   'http://localhost:4000/svc/pubsub/content/search?token=aYYLeK0kYlwnQg0wBMHO6EoAjf0LkoQ4Dyx0NGtpdjbh7F52EzHda8'
+  //   'http://192.168.10.182:4000/svc/pubsub/content/search?token=aYYLeK0kYlwnQg0wBMHO6EoAjf0LkoQ4Dyx0NGtpdjbh7F52EzHda8'
 
   const data = JSON.stringify({
     fileId,

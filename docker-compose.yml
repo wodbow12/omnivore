@@ -79,7 +79,7 @@ services:
       dockerfile: ./packages/api/Dockerfile
     container_name: "omnivore-api"
     ports:
-      - "4000:8080"
+      - "0.0.0.0:4000:8080"
     healthcheck:
       test: ["CMD-SHELL", "nc -z 0.0.0.0 8080 || exit 1"]
       interval: 15s
@@ -96,10 +96,10 @@ services:
       - IMAGE_PROXY_SECRET=some-secret
       - JWT_SECRET=some_secret
       - SSO_JWT_SECRET=some_sso_secret
-      - CLIENT_URL=http://localhost:3000
-      - GATEWAY_URL=http://localhost:8080/api
+      - CLIENT_URL=http://192.168.10.182:3000
+      - GATEWAY_URL=http://192.168.10.182:8080/api
       - CONTENT_FETCH_URL=http://content-fetch:8080/?token=some_token
-      - REDIS_URL='redis://redis:6379'
+      - REDIS_URL=redis://redis:6379
     depends_on:
       migrate:
         condition: service_completed_successfully
@@ -110,17 +110,17 @@ services:
       dockerfile: ./packages/web/Dockerfile
       args:
         - APP_ENV=prod
-        - BASE_URL=http://localhost:3000
-        - SERVER_BASE_URL=http://localhost:4000
-        - HIGHLIGHTS_BASE_URL=http://localhost:3000
+        - BASE_URL=http://192.168.10.182:3000
+        - SERVER_BASE_URL=http://192.168.10.182:4000
+        - HIGHLIGHTS_BASE_URL=http://192.168.10.182:3000
     container_name: "omnivore-web"
     ports:
-      - "3000:8080"
+      - "0.0.0.0:3000:8080"
     environment:
       - NEXT_PUBLIC_APP_ENV=prod
-      - NEXT_PUBLIC_BASE_URL=http://localhost:3000
-      - NEXT_PUBLIC_SERVER_BASE_URL=http://localhost:4000
-      - NEXT_PUBLIC_HIGHLIGHTS_BASE_URL=http://localhost:3000
+      - NEXT_PUBLIC_BASE_URL=http://192.168.10.182:3000
+      - NEXT_PUBLIC_SERVER_BASE_URL=http://192.168.10.182:4000
+      - NEXT_PUBLIC_HIGHLIGHTS_BASE_URL=http://192.168.10.182:3000
     depends_on:
       api:
         condition: service_healthy
@@ -147,6 +147,6 @@ services:
     image: "redis:7.2.4"
     container_name: "omnivore-redis"
     ports:
-      - "6379:6379"
+      - "0.0.0.0:6379:6379"
     healthcheck:
       test: [ "CMD", "redis-cli", "--raw", "incr", "ping" ]

@@ -18,7 +18,7 @@ DB_PARAMS = {
   'dbname': os.getenv('DB_NAME') or 'omnivore',
   'user': os.getenv('DB_USER'),
   'password': os.getenv('DB_PASSWORD'),
-  'host': os.getenv('DB_HOST') or 'localhost',
+  'host': os.getenv('DB_HOST') or '192.168.10.182',
   'port': os.getenv('DB_PORT') or '5432'
 }
 

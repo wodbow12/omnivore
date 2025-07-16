@@ -27,4 +27,4 @@ app.use(
   })
 );
 app.listen(4000);
-console.log("Running a GraphQL API server at http://localhost:4000/graphql");
+console.log("Running a GraphQL API server at http://192.168.10.182:4000/graphql");

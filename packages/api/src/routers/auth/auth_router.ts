@@ -107,11 +107,11 @@ export function authRouter() {
     curriedAuthHandler('GOOGLE', false, true)
   )
   router.post(
-    '/apple-redirect-localhost',
+    '/apple-redirect-192.168.10.182',
     curriedAuthHandler('APPLE', true, true)
   )
   router.post(
-    '/gauth-redirect-localhost',
+    '/gauth-redirect-192.168.10.182',
     curriedAuthHandler('GOOGLE', true, true)
   )
 

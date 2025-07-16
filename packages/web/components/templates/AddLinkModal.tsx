@@ -549,7 +549,7 @@ const UploadPad = (props: UploadPadProps): JSX.Element => {
               withCredentials: false,
               headers: {
                 'Content-Type': file.file.type,
-                'origin': 'http://localhost:3000'
+                'origin': 'http://192.168.10.182:3000'
               },
               onUploadProgress: (p) => {
                 if (!p.total) {

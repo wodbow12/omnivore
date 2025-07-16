@@ -85,8 +85,8 @@ export const validateUrl = (url: string): URL => {
   if (u.protocol !== 'http:' && u.protocol !== 'https:') {
     throw new Error('Invalid URL')
   }
-  // Make sure the domain is not localhost
-  if (u.hostname === 'localhost' || u.hostname === '0.0.0.0') {
+  // Make sure the domain is not 192.168.10.182
+  if (u.hostname === '192.168.10.182' || u.hostname === '0.0.0.0') {
     throw new Error('Invalid URL')
   }
   // Make sure its not a private GCP domain

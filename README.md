@@ -84,13 +84,13 @@ This will start postgres, initialize the database, and start the web and api ser
 
 #### 2. Open the browser
 
-Open <http://localhost:3000> and confirm Omnivore is running
+Open <http://192.168.10.182:3000> and confirm Omnivore is running
 
 #### 3. Login with the test account
 
 During database setup docker compose creates an account `demo@omnivore.app`, password: `demo_password`.
 
-Go to <http://localhost:3000/> in your browser and choose `Continue with Email` to login.
+Go to <http://192.168.10.182:3000/> in your browser and choose `Continue with Email` to login.
 
 ### Frontend Development
 
@@ -109,11 +109,11 @@ the values for running the `web` service directly on your host machine and
 running `api` and `content-fetch` within docker:
 
 ```sh
-NEXT_PUBLIC_BASE_URL=http://localhost:3000
-NEXT_PUBLIC_HIGHLIGHTS_BASE_URL=http://localhost:3000
-NEXT_PUBLIC_LOCAL_BASE_URL=http://localhost:3000
-NEXT_PUBLIC_SERVER_BASE_URL=http://localhost:4000
-NEXT_PUBLIC_LOCAL_SERVER_BASE_URL=http://localhost:4000
+NEXT_PUBLIC_BASE_URL=http://192.168.10.182:3000
+NEXT_PUBLIC_HIGHLIGHTS_BASE_URL=http://192.168.10.182:3000
+NEXT_PUBLIC_LOCAL_BASE_URL=http://192.168.10.182:3000
+NEXT_PUBLIC_SERVER_BASE_URL=http://192.168.10.182:4000
+NEXT_PUBLIC_LOCAL_SERVER_BASE_URL=http://192.168.10.182:4000
 ```
 
 ### Running the puppeteer-parse service outside of Docker
@@ -144,7 +144,7 @@ yarn start
 
 This will start the puppeteer-parse service on port 9090.
 
-In your browser go to <http://localhost:3000/home>, click the `Add Link` button,
+In your browser go to <http://192.168.10.182:3000/home>, click the `Add Link` button,
 and enter a URL such as `https://blog.omnivore.app/p/getting-started-with-omnivore`.
 
 You should see a Chromium window open and navigate to your link. When the service

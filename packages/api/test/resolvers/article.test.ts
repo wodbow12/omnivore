@@ -559,7 +559,7 @@ describe('Article API', () => {
           },
         }).expect(200)
         expect(res.body.data.savePage.url).to.startsWith(
-          'http://localhost:3000/fakeUser/example-title-'
+          'http://192.168.10.182:3000/fakeUser/example-title-'
         )
       })
     })
@@ -703,7 +703,7 @@ describe('Article API', () => {
       it('should return a slugged url', async () => {
         const res = await graphqlRequest(query, authToken).expect(200)
         expect(res.body.data.saveUrl.url).to.startsWith(
-          'http://localhost:3000/fakeUser/links/'
+          'http://192.168.10.182:3000/fakeUser/links/'
         )
       })
     })
@@ -931,7 +931,7 @@ describe('Article API', () => {
       it('should return the new url', async () => {
         const res = await graphqlRequest(query, authToken).expect(200)
         expect(res.body.data.saveFile.url).to.startsWith(
-          'http://localhost:3000/fakeUser/links'
+          'http://192.168.10.182:3000/fakeUser/links'
         )
       })
     })

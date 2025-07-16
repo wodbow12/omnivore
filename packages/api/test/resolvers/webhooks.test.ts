@@ -30,12 +30,12 @@ describe('Webhooks API', () => {
     await createWebhooks(
       [
         {
-          url: 'http://localhost:3000/webhooks/test',
+          url: 'http://192.168.10.182:3000/webhooks/test',
           user: { id: user.id },
           eventTypes: [WebhookEvent.PageCreated],
         },
         {
-          url: 'http://localhost:3000/webhooks/test',
+          url: 'http://192.168.10.182:3000/webhooks/test',
           user: { id: user.id },
           eventTypes: [WebhookEvent.PageUpdated],
         },
@@ -56,7 +56,7 @@ describe('Webhooks API', () => {
       // create test webhooks
       webhook = await createWebhook(
         {
-          url: 'http://localhost:3000/webhooks/test',
+          url: 'http://192.168.10.182:3000/webhooks/test',
           user: { id: user.id },
           eventTypes: [WebhookEvent.PageDeleted],
         },
@@ -159,7 +159,7 @@ describe('Webhooks API', () => {
     context('when id is not set', () => {
       before(() => {
         webhookId = ''
-        webhookUrl = 'http://localhost:3000/webhooks/test'
+        webhookUrl = 'http://192.168.10.182:3000/webhooks/test'
         eventTypes = [WebhookEvent.HighlightCreated]
         enabled = true
       })
@@ -178,7 +178,7 @@ describe('Webhooks API', () => {
       before(async () => {
         const webhook = await createWebhook(
           {
-            url: 'http://localhost:3000/webhooks/test',
+            url: 'http://192.168.10.182:3000/webhooks/test',
             user: { id: user.id },
             eventTypes: [WebhookEvent.HighlightUpdated],
           },
@@ -186,7 +186,7 @@ describe('Webhooks API', () => {
         )
 
         webhookId = webhook.id
-        webhookUrl = 'http://localhost:3000/webhooks/test_2'
+        webhookUrl = 'http://192.168.10.182:3000/webhooks/test_2'
         eventTypes = [
           WebhookEvent.HighlightUpdated,
           WebhookEvent.HighlightCreated,
@@ -230,7 +230,7 @@ describe('Webhooks API', () => {
       before(async () => {
         const webhook = await createWebhook(
           {
-            url: 'http://localhost:3000/webhooks/test',
+            url: 'http://192.168.10.182:3000/webhooks/test',
             user: { id: user.id },
             eventTypes: [WebhookEvent.LabelCreated],
           },

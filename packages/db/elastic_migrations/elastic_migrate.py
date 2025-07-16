@@ -6,12 +6,12 @@ import psycopg2
 from psycopg2.extras import RealDictCursor
 from elasticsearch import Elasticsearch, helpers
 
-PG_HOST = os.getenv('PG_HOST', 'localhost')
+PG_HOST = os.getenv('PG_HOST', '192.168.10.182')
 PG_PORT = os.getenv('PG_PORT', 5432)
 PG_USER = os.getenv('PG_USER', 'app_user')
 PG_PASSWORD = os.getenv('PG_PASSWORD', 'app_pass')
 PG_DB = os.getenv('PG_DB', 'omnivore')
-ES_URL = os.getenv('ES_URL', 'http://localhost:9200')
+ES_URL = os.getenv('ES_URL', 'http://192.168.10.182:9200')
 ES_USERNAME = os.getenv('ES_USERNAME', 'elastic')
 ES_PASSWORD = os.getenv('ES_PASSWORD', 'password')
 DATA_FILE = os.getenv('DATA_FILE', 'data.json')

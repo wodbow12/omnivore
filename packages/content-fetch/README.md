@@ -8,7 +8,7 @@ Copy .env.example file to .env file: `cp .env.example .env`
 
 Run `yarn start` to start the Google Cloud Function locally (Works without hot reloading).
 
-After this, you should be able to access the function on [http://localhost:8080/puppeteer](http://localhost:8080/puppeteer)
+After this, you should be able to access the function on [http://192.168.10.182:8080/puppeteer](http://192.168.10.182:8080/puppeteer)
 
 ## Deployment
 
@@ -19,6 +19,6 @@ To deploy the function use the following command:
 
 where:
 
-`<backend-address>` - address of the backend server (e.g "http://localhost:4000")
+`<backend-address>` - address of the backend server (e.g "http://192.168.10.182:4000")
 
 `<jwt-secret>` - JWT secret that the backend server is using (e.g "some_secret")

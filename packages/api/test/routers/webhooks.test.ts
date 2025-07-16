@@ -10,7 +10,7 @@ import { request } from '../util'
 
 describe('Webhooks Router', () => {
   const token = process.env.PUBSUB_VERIFICATION_TOKEN || ''
-  const webhookBaseUrl = 'https://localhost:3000'
+  const webhookBaseUrl = 'https://192.168.10.182:3000'
   const webhookPath = `/webhooks`
 
   let user: User

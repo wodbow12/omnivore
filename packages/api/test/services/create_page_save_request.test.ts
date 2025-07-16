@@ -13,7 +13,7 @@ describe('validateUrl', () => {
   })
   it('doesnt allow access to private addresses', () => {
     expect(() => {
-      validateUrl('http://localhost:8080')
+      validateUrl('http://192.168.10.182:8080')
     }).to.throw()
     expect(() => {
       validateUrl('http://0.0.0.0')

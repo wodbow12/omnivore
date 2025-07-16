@@ -47,9 +47,9 @@ const validateUrlString = (url: string): boolean => {
   if (u.protocol !== 'http:' && u.protocol !== 'https:') {
     throw new Error('Invalid URL protocol check failed')
   }
-  // Make sure the domain is not localhost
-  if (u.hostname === 'localhost' || u.hostname === '0.0.0.0') {
-    throw new Error('Invalid URL is localhost')
+  // Make sure the domain is not 192.168.10.182
+  if (u.hostname === '192.168.10.182' || u.hostname === '0.0.0.0') {
+    throw new Error('Invalid URL is 192.168.10.182')
   }
   // Make sure the domain is not a private IP
   if (/^(10|172\.16|192\.168)\..*/.test(u.hostname)) {

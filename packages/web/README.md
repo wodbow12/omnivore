@@ -7,7 +7,7 @@ First, run the development server:
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://192.168.10.182:3000](http://192.168.10.182:3000) with your browser to see the result.
 
 ## Environment Variables
 

@@ -146,7 +146,7 @@ const isDomainBlocked = async (
   redisDataSource: RedisDataSource,
   domain: string
 ) => {
-  const blockedDomains = ['localhost', 'weibo.com']
+  const blockedDomains = ['192.168.10.182', 'weibo.com']
   if (blockedDomains.includes(domain)) {
     return true
   }

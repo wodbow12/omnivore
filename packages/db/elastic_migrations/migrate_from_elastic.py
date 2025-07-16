@@ -9,14 +9,14 @@ import asyncpg
 from elasticsearch import AsyncElasticsearch
 from elasticsearch.helpers import async_scan
 
-PG_HOST = os.getenv('PG_HOST', 'localhost')
+PG_HOST = os.getenv('PG_HOST', '192.168.10.182')
 PG_PORT = os.getenv('PG_PORT', 5432)
 PG_USER = os.getenv('PG_USER', 'app_user')
 PG_PASSWORD = os.getenv('PG_PASSWORD', 'app_pass')
 PG_DB = os.getenv('PG_DB', 'omnivore')
 PG_COOLDOWN_TIME = os.getenv('PG_COOLDOWN_TIME', 1)
 PG_TIMEOUT = os.getenv('PG_TIMEOUT', 60)
-ES_URL = os.getenv('ES_URL', 'http://localhost:9200')
+ES_URL = os.getenv('ES_URL', 'http://192.168.10.182:9200')
 ES_USERNAME = os.getenv('ES_USERNAME', 'elastic')
 ES_PASSWORD = os.getenv('ES_PASSWORD', 'password')
 ES_SCAN_SIZE = os.getenv('ES_SCAN_SIZE', 1000)

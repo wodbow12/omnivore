@@ -29,17 +29,17 @@ To test the model make a curl request using your user id, for example:
 ### A single prediction
 
 ```
-curl -d '{ "user_id": "2da52794-0dd2-11ef-9855-5f368b90f676", "item_features": { "site": "Omnivore Blog", "title": "this is a title", "author": "Tiago Forte", "subscription": "this is a subscriptionsdfsdfsdf", "has_thumbnail": true, "has_site_icon": true, "saved_at": "2024-05-27T04:20:47Z" }}' -H 'Content-Type: application/json' localhost:5000/predict
+curl -d '{ "user_id": "2da52794-0dd2-11ef-9855-5f368b90f676", "item_features": { "site": "Omnivore Blog", "title": "this is a title", "author": "Tiago Forte", "subscription": "this is a subscriptionsdfsdfsdf", "has_thumbnail": true, "has_site_icon": true, "saved_at": "2024-05-27T04:20:47Z" }}' -H 'Content-Type: application/json' 192.168.10.182:5000/predict
 ```
 
 ### A batch prediction
 
-curl -d '{ "user_id": "2da52794-0dd2-11ef-9855-5f368b90f676", "items": { "134f883e-efd8-11ee-ae98-532a6874855a": { "library_item_id": "134f883e-efd8-11ee-ae98-532a6874855a", "site": "TikTok", "title": "this is a title", "author": "Tiago Forte", "subscription": "this is a subscriptionsdfsdfsdf", "has_thumbnail": true, "has_site_icon": true, "saved_at": "2024-05-27T04:20:47Z" }} }' -H 'Content-Type: application/json' localhost:5000/batch
+curl -d '{ "user_id": "2da52794-0dd2-11ef-9855-5f368b90f676", "items": { "134f883e-efd8-11ee-ae98-532a6874855a": { "library_item_id": "134f883e-efd8-11ee-ae98-532a6874855a", "site": "TikTok", "title": "this is a title", "author": "Tiago Forte", "subscription": "this is a subscriptionsdfsdfsdf", "has_thumbnail": true, "has_site_icon": true, "saved_at": "2024-05-27T04:20:47Z" }} }' -H 'Content-Type: application/json' 192.168.10.182:5000/batch
 
 ### Make a prediction for a given user and library_item (for debugging only)
 
 ```
-curl localhost:5000/users/2da52794-0dd2-11ef-9855-5f368b90f676/library_items/134f883e-efd8-11ee-ae98-532a6874855a/score
+curl 192.168.10.182:5000/users/2da52794-0dd2-11ef-9855-5f368b90f676/library_items/134f883e-efd8-11ee-ae98-532a6874855a/score
 {
   "score": {
     "score": 0.8,
@@ -51,7 +51,7 @@ curl localhost:5000/users/2da52794-0dd2-11ef-9855-5f368b90f676/library_items/134
 ### Print the user's profile data (for debugging only)
 
 ```
-curl localhost:5000/users/2da52794-0dd2-11ef-9855-5f368b90f676/features
+curl 192.168.10.182:5000/users/2da52794-0dd2-11ef-9855-5f368b90f676/features
 {
   "user_30d_interactions_site": {
     "count": [

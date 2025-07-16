@@ -97,7 +97,7 @@ public extension AppEnvironment {
     case .prod:
       return URL(string: prodBaseURL)!
     case .test, .local:
-      return URL(string: "http://localhost:4000")!
+      return URL(string: "http://192.168.10.182:4000")!
     case .custom:
       guard
         let sharedDefaults = UserDefaults(suiteName: "group.app.omnivoreapp"),
@@ -117,7 +117,7 @@ public extension AppEnvironment {
     case .prod:
       return URL(string: prodWebURL)!
     case .test, .local:
-      return URL(string: "http://localhost:3000")!
+      return URL(string: "http://192.168.10.182:3000")!
     case .custom:
       guard
         let sharedDefaults = UserDefaults(suiteName: "group.app.omnivoreapp"),
@@ -137,7 +137,7 @@ public extension AppEnvironment {
     case .prod:
       return URL(string: prodTtsURL)!
     case .test, .local:
-      return URL(string: "http://localhost:8080")!
+      return URL(string: "http://192.168.10.182:8080")!
     case .custom:
       guard
         let sharedDefaults = UserDefaults(suiteName: "group.app.omnivoreapp"),

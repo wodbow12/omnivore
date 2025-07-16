@@ -15,9 +15,9 @@ on:
 
 env:
   NEXT_PUBLIC_APP_ENV: prod
-  NEXT_PUBLIC_BASE_URL: http://localhost:3000
-  NEXT_PUBLIC_SERVER_BASE_URL: http://localhost:4000
-  NEXT_PUBLIC_HIGHLIGHTS_BASE_URL: http://localhost:3000
+  NEXT_PUBLIC_BASE_URL: http://192.168.10.182:3000
+  NEXT_PUBLIC_SERVER_BASE_URL: http://192.168.10.182:4000
+  NEXT_PUBLIC_HIGHLIGHTS_BASE_URL: http://192.168.10.182:3000
 
 jobs:
   run-code-tests:
@@ -51,7 +51,7 @@ jobs:
       - name: Initialize the database
         run: |
           cp ./packages/api/.env.test ./packages/api/.env
-          psql --host localhost --port ${{ job.services.postgres.ports[5432] }} --user postgres --password -c "CREATE DATABASE omnivore_test;"
+          psql --host 192.168.10.182 --port ${{ job.services.postgres.ports[5432] }} --user postgres --password -c "CREATE DATABASE omnivore_test;"
         env:
           PGPASSWORD: postgres
       - name: Use Node.js ${{ matrix.node-version }}
@@ -67,11 +67,11 @@ jobs:
           yarn install --frozen-lockfile
       - name: Database Migration
         run: |
-          psql -h localhost -p ${{ job.services.postgres.ports[5432] }} -U postgres -c "CREATE USER app_user WITH ENCRYPTED PASSWORD 'app_pass';"
+          psql -h 192.168.10.182 -p ${{ job.services.postgres.ports[5432] }} -U postgres -c "CREATE USER app_user WITH ENCRYPTED PASSWORD 'app_pass';"
           yarn workspace @omnivore/db migrate
-          psql -h localhost -p ${{ job.services.postgres.ports[5432] }} -U postgres -c "GRANT omnivore_user to app_user;"
+          psql -h 192.168.10.182 -p ${{ job.services.postgres.ports[5432] }} -U postgres -c "GRANT omnivore_user to app_user;"
         env:
-          PG_HOST: localhost
+          PG_HOST: 192.168.10.182
           PG_PORT: ${{ job.services.postgres.ports[5432] }}
           PG_USER: postgres
           PG_PASSWORD: postgres
@@ -89,14 +89,14 @@ jobs:
           yarn test
         timeout-minutes: 10
         env:
-          PG_HOST: localhost
+          PG_HOST: 192.168.10.182
           PG_PORT: ${{ job.services.postgres.ports[5432] }}
           PG_USER: app_user
           PG_PASSWORD: app_pass
           PG_DB: omnivore_test
           PG_LOGGER: debug
-          REDIS_URL: redis://localhost:${{ job.services.redis.ports[6379] }}
-          MQ_REDIS_URL: redis://localhost:${{ job.services.redis.ports[6379] }}
+          REDIS_URL: redis://192.168.10.182:${{ job.services.redis.ports[6379] }}
+          MQ_REDIS_URL: redis://192.168.10.182:${{ job.services.redis.ports[6379] }}
   build-docker-images:
     name: Build docker images
     runs-on: ubuntu-latest

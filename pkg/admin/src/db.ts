@@ -16,7 +16,7 @@ import { Database, Resource } from '@adminjs/typeorm'
 export const registerDatabase = async (secrets: any): Promise<Connection> => {
   AdminJs.registerAdapter({ Database, Resource })
 
-  let host = 'localhost'
+  let host = '192.168.10.182'
   if (process.env.K_SERVICE) {
     console.log(
       'connecting to database via Cloud Run connection',

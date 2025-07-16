@@ -41,11 +41,11 @@ The following environment variables should be changed to reflect where you are r
 
 | Environment Variable            | Description                                    | Local Parameter       |
 |---------------------------------|------------------------------------------------|-----------------------|
-| BASE URL                        | The URL of the Front End of the Application.   | http://localhost:3000 |
-| SERVER_BASE_URL                 | The URL of the API Server.                     | http://localhost:4000 |
-| HIGHLIGHTS_BASE_URL             | The URL of the Front end of the Application    | http://localhost:3000 |
-| CLIENT_URL                      | The URL of the Front end of the Application    | http://localhost:3000 |
-| IMAGEPROXY_URL                  | Service that proxies images to avoid blocking  | http://localhost:7070 |
+| BASE URL                        | The URL of the Front End of the Application.   | http://192.168.10.182:3000 |
+| SERVER_BASE_URL                 | The URL of the API Server.                     | http://192.168.10.182:4000 |
+| HIGHLIGHTS_BASE_URL             | The URL of the Front end of the Application    | http://192.168.10.182:3000 |
+| CLIENT_URL                      | The URL of the Front end of the Application    | http://192.168.10.182:3000 |
+| IMAGEPROXY_URL                  | Service that proxies images to avoid blocking  | http://192.168.10.182:7070 |
 
 
 They are the same as the listed environment variables above. 
@@ -58,7 +58,7 @@ Running `docker compose up` will pull the images from the github, and then start
 During the first deployment omnivore-migrate will go through and set up the necessary Postgres tables. 
 This will also create a demo user with email: demo@omnivore.app, password: demo_password. 
 
-When the service is ready you can access the web-app by using localhost:3000
+When the service is ready you can access the web-app by using 192.168.10.182:3000
 
 With the default .env file you will be able to use Omnivore, add RSS Feeds, add stories etc. 
 
@@ -98,7 +98,7 @@ AWS_REGION=us-east-1
 
 Replace the following with an endpoint URL from [here](https://docs.aws.amazon.com/general/latest/gr/s3.html)
 ```env
-LOCAL_MINIO_URL=http://localhost:1010
+LOCAL_MINIO_URL=http://192.168.10.182:1010
 
 ```
 

@@ -100,7 +100,7 @@ export async function handleAppleWebAuth(
 ): Promise<AppleWebAuthResponse> {
   const baseURL = () => {
     if (isLocal) {
-      return 'http://localhost:3000'
+      return 'http://192.168.10.182:3000'
     }
 
     if (isVercel) {

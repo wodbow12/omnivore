@@ -1,5 +1,5 @@
 {
-  "baseUrl": "http://localhost:3000",
+  "baseUrl": "http://192.168.10.182:3000",
   "experimentalSessionSupport": true,
     "fixturesFolder": false,
   "supportFile": "cypress/support/index.js",

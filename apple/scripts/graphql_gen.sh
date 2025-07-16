@@ -3,7 +3,7 @@ cd BuildTools
 SDKROOT=macosx
 
 swift run swift-graphql \
-  http://localhost:4000/api/graphql \
+  http://192.168.10.182:4000/api/graphql \
   --config "$SRCROOT/../swiftgraphql.yml" \
   --output "$SRCROOT/../OmnivoreKit/Sources/Services/DataService/GQLSchema.swift"
 
